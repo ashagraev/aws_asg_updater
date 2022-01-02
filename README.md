@@ -85,3 +85,12 @@ This will update the launch template and run the instance refresh:
 - `ami`: the name of the AMI to be created from the selected instance; optional: use together with the `--instance` argument only.
 - `update-timeout`: the time limit to complete the instance refresh; optional: the default is 30 minutes. Use the Golang duration strings to override, see https://pkg.go.dev/time#ParseDuration. 
 - `update-tick`: the time between status updates in the log file; optional: the default is one minute. Making this parameter lower might speed up the overall execution. Use the Golang duration strings to override, see https://pkg.go.dev/time#ParseDuration.
+
+## Installation
+
+If Golang is installed on your machine, simply run:
+
+```
+go install github.com/ashagraev/aws_asg_updater@latest
+```
+
