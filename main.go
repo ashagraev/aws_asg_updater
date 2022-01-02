@@ -10,12 +10,12 @@ import (
 )
 
 func initRunConfig() *aws.RunConfig {
-  amiName := flag.String("ami", "", "AMI name to create from the instance")
-  imageID := flag.String("image", "", "image id to be used in the autoscaling group")
-  instanceID := flag.String("instance", "", "source instance id to create the image from")
-  groupName := flag.String("group", "", "auto scale group name")
-  updateTimeoutStr := flag.String("update-timeout", "30m", "update timeout (e.g., 30m, 1h, 7h20m7s)")
-  updateTickStr := flag.String("update-tick", "1m", "update tick (e.g., 1m, 5m, 10s, 7h20m7s)")
+  groupName := flag.String("group", "", "the name of the Auto Scaling group to update; required")
+  imageID := flag.String("image", "", "AMI id to update the group; optional: do not use if you want to create an AMI from a running instance.")
+  instanceID := flag.String("instance", "", "AWS EC2 instance ID to create the AMI from; optional: do not use if you already have an AMI ID.")
+  amiName := flag.String("ami", "", "the name of the AMI to be created from the selected instance; optional: use together with the `--instance` argument only.")
+  updateTimeoutStr := flag.String("update-timeout", "30m", "the time limit to complete the instance refresh; optional: the default is 30 minutes. Use the Golang duration strings to override, see https://pkg.go.dev/time#ParseDuration.")
+  updateTickStr := flag.String("update-tick", "1m", "the time between status updates in the log file; optional: the default is one minute. Making this parameter lower might speed up the overall execution. Use the Golang duration strings to override, see https://pkg.go.dev/time#ParseDuration.")
   flag.Parse()
 
   updateTimeout, err := time.ParseDuration(*updateTimeoutStr)
