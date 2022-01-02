@@ -88,10 +88,14 @@ This will update the launch template and run the instance refresh:
 
 ## Installation
 
-If Golang is installed on your machine, simply run:
+Assuming you already have Golang installed on the machine, simply run:
 
 ```
 go install github.com/ashagraev/aws_asg_updater@latest
 ```
 
-Alternatively, you can use the pre-built binaries from the latest release: https://github.com/ashagraev/aws_asg_updater/releases/latest.
+The tool will then appear in your golang binary folder (e.g., `~/go/bin/aws_asg_updater`). If you don't have Golang yet,
+consider installing it using the official guide https://go.dev/doc/install.
+
+Alternatively, you can download the pre-built binaries from the latest release:
+https://github.com/ashagraev/aws_asg_updater/releases/latest.
