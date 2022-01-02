@@ -4,8 +4,8 @@ import (
   "context"
   "flag"
   "fmt"
+  "github.com/ashagraev/aws_asg_updater/aws"
   "log"
-  "main/aws"
   "time"
 )
 

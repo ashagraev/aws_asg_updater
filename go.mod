@@ -1,4 +1,4 @@
-module main
+module github.com/ashagraev/aws_asg_updater
 
 go 1.17
 
