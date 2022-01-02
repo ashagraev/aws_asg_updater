@@ -94,3 +94,4 @@ If Golang is installed on your machine, simply run:
 go install github.com/ashagraev/aws_asg_updater@latest
 ```
 
+Alternatively, you can use the pre-built binaries from the latest release: https://github.com/ashagraev/aws_asg_updater/releases/latest.
