@@ -33,7 +33,7 @@ The tool uses the default AWS credentials config. Run `aws configure` or set up 
 The program options to create a new AMI from the instance `i-0d8767eed40de1728`, name it `service_ami`,
 update the Auto Scaling group `my_service_group` with it:
 
-`--group my_service_group --instance i-0d8767eed40de1728 --ami service_ami`
+`aws_asg_updater --group my_service_group --instance i-0d8767eed40de1728 --ami service_ami`
 
 The output looks like that then:
 
@@ -58,7 +58,7 @@ The output looks like that then:
 
 If you already have an AMI ID, just skip the `--ami` and `--instance` options, and use the `--image` option, e.g.:
 
-`--group my_service_group --image ami-070a1f039b2945569`
+`aws_asg_updater --group my_service_group --image ami-070a1f039b2945569`
 
 This will update the launch template and run the instance refresh:
 
